@@ -11,7 +11,7 @@ def issueManager = ComponentAccessor.getIssueManager()
 
 Issue parentIssue = issue
 
-if (parentIssue.getIssueTypeObject().getName() == 'Sub-Task' || parentIssue.getIssueTypeObject().getName() == 'サブタスク')
+if (parentIssue.getIssueTypeObject().getName() == 'Sub-Task' || parentIssue.getIssueTypeObject().getName() == '繧ｵ繝悶ち繧ｹ繧ｯ')
     return
 
 //if (parentIssue.getIssueTypeObject().name != 'Feature')
@@ -37,7 +37,7 @@ summariesList.each {
     newSubTask.setParentObject(parentIssue)
     newSubTask.setProjectObject(parentIssue.getProjectObject())
     newSubTask.setIssueTypeId(constantManager.getAllIssueTypeObjects().find{
-        it.getName() == "Sub-Task" || it.getName() == 'サブタスク'
+        it.getName() == "Sub-Task" || it.getName() == '繧ｵ繝悶ち繧ｹ繧ｯ'
     }.id)
 
     // Add any other fields you want for the newly created sub task
